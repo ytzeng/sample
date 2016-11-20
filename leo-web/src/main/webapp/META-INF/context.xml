@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/devds" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" maxIdle="2" maxWait="5000"
+		username="root" password="soento" url="jdbc:mysql://localhost:3306/soento"
+		maxActive="4" />
+</Context>
