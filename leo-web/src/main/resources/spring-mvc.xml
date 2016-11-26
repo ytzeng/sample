@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!-- 启动包扫描功能，以便注册带有@Controlle注解的类 -->
+	<context:component-scan base-package="com.leo.zeng.sample.web.controller" />
+	<!-- 指定自己定义的validator -->
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<ref bean="stringHttpMessageConverter" />
+			<ref bean="jsonHttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter">
+		<!-- 避免出现乱码 -->
+		<constructor-arg value="UTF-8" index="0"></constructor-arg>
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/plain;charset=UTF-8</value>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="jsonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<array>
+				<value>application/json;charset=UTF-8</value>
+				<value>application/x-www-form-urlencoded;charset=UTF-8</value>
+				<value>text/plain;charset=UTF-8</value>
+				<!-- 避免IE出现下载JSON文件的情况 -->
+				<value>text/html;charset=UTF-8</value>
+			</array>
+		</property>
+	</bean>
+	<!-- 配置MultipartResolver 用于文件上传 使用spring的CommosMultipartResolver -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8" />
+		<!-- 100M = 1024*1024*100 -->
+		<property name="maxUploadSize" value="104857600" />
+		<property name="maxInMemorySize" value="40960" />
+	</bean>
+</beans>
