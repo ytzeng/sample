@@ -17,7 +17,7 @@
 	<bean class="org.leo.zeng.quartz.config.ScheduleConfigure">
 		<property name="startups">
 			<list>
-				<ref bean="demo" />
+				<!-- <ref bean="demo" /> -->
 			</list>
 		</property>
 	</bean>
