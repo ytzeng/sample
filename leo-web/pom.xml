@@ -28,6 +28,14 @@
 			<groupId>org.leo.zeng.framework</groupId>
 			<artifactId>leo-zeng-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.leo.zeng.framework</groupId>
+			<artifactId>leo-zeng-mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

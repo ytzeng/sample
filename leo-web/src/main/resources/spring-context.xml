@@ -16,7 +16,10 @@
 	<context:annotation-config />
 	<import resource="classpath*:leo-core.xml" />
 	<import resource="classpath*:leo-env.xml" />
+	<import resource="classpath*:leo-mybatis.xml" />
+	<import resource="classpath*:spring-db.xml" />
 	<!-- 启动包扫描功能，以便注册带有@Service、@repository、@Component等注解的类成为spring的bean -->
-	<context:component-scan base-package="com.leo.zeng.sample.web.service" />
+	<context:component-scan base-package="com.leo.zeng.sample.web.service.impl" />
+	<context:component-scan base-package="com.leo.zeng.sample.web.service.tran" />
 
 </beans>
