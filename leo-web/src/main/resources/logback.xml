@@ -55,7 +55,19 @@
 	<logger name="java.sql">
 		<level value="INFO" />
 	</logger>
+	<logger name="org.jdbcdslog">
+		<level value="INFO" />
+	</logger>
 	<logger name="org.apache">
+		<level value="INFO" />
+	</logger>
+	<logger name="org.mybatis">
+		<level value="INFO" />
+	</logger>
+	<logger name="org.quartz">
+		<level value="INFO" />
+	</logger>
+	<logger name="net.sf.ehcache">
 		<level value="INFO" />
 	</logger>
 	<root level="DEBUG">
