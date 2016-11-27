@@ -37,6 +37,10 @@
 			<artifactId>leo-zeng-quartz</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.leo.zeng.framework</groupId>
+			<artifactId>leo-zeng-api</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
