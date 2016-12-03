@@ -7,13 +7,13 @@
 		<version>SNAPSHOT</version>
 	</parent>
 	<groupId>org.leo.zeng.sample</groupId>
-	<artifactId>leo-sample-web</artifactId>
+	<artifactId>leo-web</artifactId>
 	<version>SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<base.repo.url>http://127.0.0.1:8081/nexus/content</base.repo.url>
-		<deploy.project.name>sample</deploy.project.name>
+		<deploy.project.name>sample-web</deploy.project.name>
 	</properties>
 	<dependencies>
 		<dependency>
