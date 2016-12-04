@@ -1,5 +1,8 @@
 package com.leo.zeng.sample.web.controller;
 
+import com.leo.zeng.sample.web.pojo.view.UserView;
+import com.leo.zeng.sample.web.service.TestService;
+import com.leo.zeng.sample.web.service.tran.TestServiceTran;
 import org.leo.zeng.core.pojo.RespDate;
 import org.leo.zeng.core.util.SpringUtil;
 import org.leo.zeng.web.support.BaseController;
@@ -9,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.leo.zeng.sample.web.pojo.view.UserView;
-import com.leo.zeng.sample.web.service.TestService;
-import com.leo.zeng.sample.web.service.tran.TestServiceTran;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController extends BaseController {
@@ -71,4 +72,11 @@ public class UserController extends BaseController {
             return failure("I0001", e, logger);
         }
     }
+
+    @RequestMapping("velocity")
+    public ModelAndView velocity() {
+        logger.info("UserController.velocity");
+        return success("demo", success());
+    }
+
 }

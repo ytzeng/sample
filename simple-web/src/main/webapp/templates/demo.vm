@@ -1,0 +1,11 @@
+<html>
+<head>
+    <script>
+        var resp = ${respData}.toJson();
+        alert(resp.code);
+    </script>
+</head>
+<body>
+<h1>Hello velocity ${respData.code}</h1>
+</body>
+</html>
